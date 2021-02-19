@@ -24,7 +24,7 @@
         <c:forEach items="${persons}" var="person">
         <tr>
             <td><a href="/persons/${person.id}"><c:out value="${person.firstName}"/> <c:out value="${person.lastName}"/></a></td>
-            <td>00000<c:out value="${person.license.id}"/></td>
+            <td><c:out value="${person.license.number}"/></td>
             <td><c:out value="${person.license.state}"/></td>
             <td><c:out value="${person.license.expirationDate}"/></td>
         </tr>

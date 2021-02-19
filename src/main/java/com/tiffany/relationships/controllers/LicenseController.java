@@ -47,11 +47,12 @@ public class LicenseController {
         	System.out.println("Error creating a license!");
             return "newLicense.jsp";
         } else {
-        	licenseService.createLicense(license);
         	System.out.println("License was created!");
-        	model.addAttribute("id", license.getPerson().getId());
-        	System.out.println("/persons/" + license.getPerson().getId().toString());
-            return "redirect:/persons/{id}";
+        	String number = String.format("%05d", license.getPerson().getId());
+        	license.setNumber(number);
+        	licenseService.createLicense(license);
+        	System.out.println("Number " + number);
+            return "redirect:/persons";
         }
     }
     

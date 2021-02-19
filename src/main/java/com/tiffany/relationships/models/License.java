@@ -44,10 +44,11 @@ public class License {
     
     public License(Person person,
 			   String state,
-			   Date expirationDate) {
+			   Date expirationDate, String number) {
 		this.expirationDate = expirationDate;
 		this.state = state;
 		this.person = person;
+		this.number = number;
 	}
 
 	public Long getId() {
